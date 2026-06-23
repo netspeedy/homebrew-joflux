@@ -9,11 +9,11 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2ea043?style=flat-square" alt="License"></a>
 </p>
 
-# homebrew-joflux
+# joflux Homebrew Tap
 
-Homebrew tap for [joflux](https://github.com/netspeedy/joflux), a repeatable CLI
-workflow for moving GitHub organization repositories to Forgejo-compatible
-instances such as Codeberg.
+Install [joflux](https://github.com/netspeedy/joflux) with Homebrew. joflux is
+a repeatable CLI workflow for moving GitHub organization repositories to
+Forgejo-compatible instances such as Codeberg.
 
 ## Install
 
@@ -37,11 +37,10 @@ For development builds from the source branch:
 brew install --HEAD netspeedy/joflux/joflux
 ```
 
-## Formulae
+## Formula
 
-| Formula | Description |
-|---|---|
-| [`joflux`](Formula/joflux.rb) | Bulk GitHub-to-Forgejo organization migration workflow |
+The [`joflux`](Formula/joflux.rb) formula installs the latest stable release
+wheel published by the main project.
 
 ## About this tap
 
