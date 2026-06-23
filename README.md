@@ -3,69 +3,42 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/netspeedy/joflux/releases"><img src="https://img.shields.io/github/v/release/netspeedy/joflux?sort=semver&style=flat-square" alt="joflux release"></a>
-  <a href="Formula/joflux.rb"><img src="https://img.shields.io/badge/Homebrew-formula-FBB040?style=flat-square&logo=homebrew&logoColor=black" alt="Homebrew formula"></a>
-  <a href="https://github.com/netspeedy/joflux"><img src="https://img.shields.io/badge/source-netspeedy%2Fjoflux-4BD8FF?style=flat-square" alt="Source repository"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2ea043?style=flat-square" alt="License"></a>
+  <a href="https://github.com/netspeedy/joflux/releases"><img src="https://img.shields.io/github/v/release/netspeedy/joflux?sort=semver&style=flat-square" alt="Release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2EA043?style=flat-square" alt="License"></a>
+  <a href="https://github.com/netspeedy/homebrew-joflux"><img src="https://img.shields.io/badge/Homebrew-tap-FFDD00?style=flat-square&logo=homebrew&logoColor=black" alt="Homebrew tap"></a>
+  <a href="https://github.com/netspeedy/joflux"><img src="https://img.shields.io/badge/source-netspeedy%2Fjoflux-00897B?style=flat-square" alt="Source"></a>
+  <a href="https://buymeacoffee.com/soakes"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-FFDD00?style=flat-square&logo=buymeacoffee&logoColor=000000" alt="Buy Me a Coffee"></a>
 </p>
 
-# joflux Homebrew Tap
-
-Install [joflux](https://github.com/netspeedy/joflux) with Homebrew. joflux is
-a repeatable CLI workflow for moving GitHub organization repositories to
-Forgejo-compatible instances such as Codeberg.
+---
 
 ## Install
-
-Install the tap and formula:
 
 ```bash
 brew tap netspeedy/joflux
 brew install joflux
 ```
 
-To verify the install:
+> On recent Homebrew, new third-party taps require explicit trust. If installation is refused, run `brew trust netspeedy/joflux` once, then `brew install joflux`.
+
+Export a GitHub repository inventory:
 
 ```bash
-joflux --version
-joflux --help
+joflux --config joflux.toml export
 ```
 
-For development builds from the source branch:
+## Available formulae
 
-```bash
-brew install --HEAD netspeedy/joflux/joflux
-```
-
-## Formula
-
-The [`joflux`](Formula/joflux.rb) formula installs the latest stable release
-wheel published by the main project.
+| Formula | Description |
+|---|---|
+| [`joflux`](Formula/joflux.rb) | Bulk GitHub-to-Forgejo organization migration workflow |
 
 ## About this tap
 
-This repository packages the Homebrew formula only. Stable releases are built in
-the main [joflux](https://github.com/netspeedy/joflux) repository, then the
-formula in this tap is updated automatically with the release asset URL and
-SHA256 checksum.
-
-The README hero and share-card artwork live in [`assets/`](assets/):
-
-- [`joflux-readme-hero.png`](assets/joflux-readme-hero.png) and
-  [`joflux-readme-hero.svg`](assets/joflux-readme-hero.svg) for this README.
-- [`joflux-social-card.png`](assets/joflux-social-card.png) and
-  [`joflux-social-card.svg`](assets/joflux-social-card.svg) for Open Graph or
-  social previews that need a 1200x630 image.
-
-## Links
-
-- [joflux source repository](https://github.com/netspeedy/joflux)
-- [joflux releases](https://github.com/netspeedy/joflux/releases)
-- [Formula source](Formula/joflux.rb)
+This repository only packages the formula at [`Formula/joflux.rb`](Formula/joflux.rb). It is updated automatically on each [joflux release](https://github.com/netspeedy/joflux/releases). For source code, issues, and documentation, see the [main repository](https://github.com/netspeedy/joflux).
 
 ## License
 
-Copyright (c) 2026 Simon Oakes. Released under the [MIT License](LICENSE).
+Copyright © 2026 [Simon Oakes](https://github.com/soakes). Released under the [MIT License](LICENSE).
 
-joflux is an unofficial community tool. It is not affiliated with, endorsed by,
-or sponsored by GitHub, Forgejo, or Codeberg.
+This tap only packages the [joflux](https://github.com/netspeedy/joflux) formula, an unofficial community tool that is not affiliated with, endorsed by, or sponsored by GitHub, Forgejo, or Codeberg.
