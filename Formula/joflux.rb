@@ -1,8 +1,8 @@
 class Joflux < Formula
   desc "Bulk migration workflow for moving GitHub organizations to Forgejo or Codeberg"
   homepage "https://github.com/netspeedy/joflux"
-  url "https://github.com/netspeedy/joflux/releases/download/v0.1.1/joflux-0.1.1-py3-none-any.whl"
-  sha256 "cb9168b0655f276eb61e9fa8ffcfb3ef6ae40dfcf8cf37274fc4b9867884fad9"
+  url "https://github.com/netspeedy/joflux/releases/download/v0.1.2/joflux-0.1.2-py3-none-any.whl"
+  sha256 "6d15651ae3ddada6da72c30b88990121bd33bd242466b9f7846f01f271bdf5e6"
   license "MIT"
 
   depends_on "python@3.13"
