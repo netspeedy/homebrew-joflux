@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/joflux-readme-hero.png" width="960" alt="joflux - GitHub org to Forgejo migration workflow">
+  <img src="assets/joflux-readme-hero.svg" width="960" alt="joflux - move the whole org, verify every repo. GitHub organizations into Forgejo or Codeberg, one step at a time, each step leaving JSON you can inspect.">
 </p>
 
 <p align="center">
@@ -63,6 +63,8 @@ brew untap netspeedy/joflux
 ## About this tap
 
 This repository only packages [`Formula/joflux.rb`](Formula/joflux.rb). The joflux release workflow rewrites it for each stable [release](https://github.com/netspeedy/joflux/releases); release candidates aren't published here. Please open issues in the [main repository](https://github.com/netspeedy/joflux/issues).
+
+The banner at the top of this page is generated. Edit the copy, layout or timing in `.github/scripts/build_readme_hero.py` and run it to rebuild `assets/joflux-readme-hero.svg`. It downloads the font subsets from Google Fonts, so it needs network access.
 
 ## License
 
