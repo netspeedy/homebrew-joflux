@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/joflux-readme-hero.png" width="960" alt="joflux - GitHub org to Forgejo migration workflow">
+  <img src="assets/joflux-readme-hero.svg" width="960" alt="joflux - move the whole org, verify every repo. GitHub organizations into Forgejo or Codeberg, one step at a time, each step leaving JSON you can inspect.">
 </p>
 
 <p align="center">
@@ -12,6 +12,8 @@
 
 ---
 
+This is the Homebrew tap for [joflux](https://github.com/netspeedy/joflux). joflux moves the repositories of a GitHub organization into a Forgejo-compatible instance such as Codeberg in five separate stages, each of which writes its results as JSON you can read and keep.
+
 ## Install
 
 ```bash
@@ -19,23 +21,50 @@ brew tap netspeedy/joflux
 brew install joflux
 ```
 
+The formula installs joflux on Homebrew's Python 3.13 on macOS and Linux.
+
 > On recent Homebrew, new third-party taps require explicit trust. If installation is refused, run `brew trust netspeedy/joflux` once, then `brew install joflux`.
 
-Export a GitHub repository inventory:
+## Try it
+
+Copy the [example config](https://github.com/netspeedy/joflux/blob/main/joflux.toml.example) to `joflux.toml`, set your GitHub and Forgejo organizations in it, put both tokens in the environment, and export the inventory. `export` only reads from GitHub, so it's the safe first step:
 
 ```bash
+export JOFLUX_GITHUB_TOKEN="ghp_your_github_token"
+export JOFLUX_FORGEJO_TOKEN="your_forgejo_token"
 joflux --config joflux.toml export
+```
+
+It lists the organization and saves the inventory:
+
+```text
+02:39:52 - INFO - Fetching repositories from GitHub org: my-github-org
+02:39:52 - INFO - Found 14 repositories
+02:39:52 - INFO - Inventory saved: migration_output/repos-inventory.json
+02:39:52 - INFO - Exported 14 repositories (3 private, 1 forks, 1 archived)
+```
+
+Review `migration_output/repos-inventory.json`, then run `migrate`, `monitor`, `verify` and finally `archive`, which asks for confirmation before it archives anything on GitHub. The [README](https://github.com/netspeedy/joflux#readme) covers each stage, the files it writes and the exit codes.
+
+## Upgrade or remove
+
+```bash
+brew upgrade joflux
+brew uninstall joflux
+brew untap netspeedy/joflux
 ```
 
 ## Available formulae
 
 | Formula | Description |
 |---|---|
-| [`joflux`](Formula/joflux.rb) | Bulk GitHub-to-Forgejo organization migration workflow |
+| [`joflux`](Formula/joflux.rb) | Bulk migration workflow for moving GitHub organizations to Forgejo or Codeberg |
 
 ## About this tap
 
-This repository only packages the formula at [`Formula/joflux.rb`](Formula/joflux.rb). It is updated automatically on each [joflux release](https://github.com/netspeedy/joflux/releases). For source code, issues, and documentation, see the [main repository](https://github.com/netspeedy/joflux).
+This repository only packages [`Formula/joflux.rb`](Formula/joflux.rb). The joflux release workflow rewrites it for each stable [release](https://github.com/netspeedy/joflux/releases); release candidates aren't published here. Please open issues in the [main repository](https://github.com/netspeedy/joflux/issues).
+
+The banner at the top of this page is generated. Edit the copy, layout or timing in `.github/scripts/build_readme_hero.py` and run it to rebuild `assets/joflux-readme-hero.svg`. It downloads the font subsets from Google Fonts, so it needs network access.
 
 ## License
 
